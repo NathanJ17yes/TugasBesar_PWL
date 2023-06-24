@@ -30,12 +30,12 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-
-
-
-
-
-
+                <li class="nav-item">
+                    <a href="<?php echo e(route('prodiList')); ?>" class="nav-link">
+                        <i class="nav-icon fa fa-tasks"></i>
+                        <p>Prodi</p>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="<?php echo e(route('matkulList')); ?>" class="nav-link">
                         <i class="nav-icon fa fa-mortar-board"></i>
