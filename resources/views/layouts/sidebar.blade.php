@@ -32,13 +32,13 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{route('prodiList')}}" class="nav-link">
-                        <i class="nav-icon fa fa-dashboard"></i>
-                        <p>Program Studi</p>
+                        <i class="nav-icon fa fa-tasks"></i>
+                        <p>Ruangan</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('matkulList')}}" class="nav-link">
-                        <i class="nav-icon fa fa-dashboard"></i>
+                        <i class="nav-icon fa fa-mortar-board"></i>
                         <p>Mata Kuliah</p>
                     </a>
                 </li>
