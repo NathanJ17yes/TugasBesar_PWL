@@ -33,7 +33,7 @@
                 <li class="nav-item">
                     <a href="{{route('prodiList')}}" class="nav-link">
                         <i class="nav-icon fa fa-tasks"></i>
-                        <p>Ruangan</p>
+                        <p>Prodi</p>
                     </a>
                 </li>
                 <li class="nav-item">
