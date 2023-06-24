@@ -28,7 +28,7 @@
                 <a href="{{route('createMatkul')}}" class="btn btn-primary" role="button">Add Mata Kuliah</a>
             </div>
             <div class="card-body p-0">
-                <table class="table-hover mb-0">
+                <table class="table table-striped mb-0">
                     <thead>
                     <tr>
                         <th>Kode Mata Kuliah</th>
