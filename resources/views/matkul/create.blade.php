@@ -27,8 +27,23 @@
                 <form action="{{route('storeMatkul')}}" method="post">
                     @csrf
                     <div class="form-group">
-                        <label for="txtName">Nama Matkul</label>
+                        <label for="txtName">Kode Mata Kuliah</label>
                         <input type="text" id="txtName" name="txtName" required placeholder="Nama Matkul" class="form-control">
+                        <label for=""></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtName">Prodi</label>
+                        <input type="text" id="txtName" name="txtName" required placeholder="Prodi" class="form-control">
+                        <label for=""></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtName">Mata Kuliah</label>
+                        <input type="text" id="txtName" name="txtName" required placeholder="Mata kuliah" class="form-control">
+                        <label for=""></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtName">SKS</label>
+                        <input type="text" id="txtName" name="txtName" required placeholder="Jumlah SKS" class="form-control">
                         <label for=""></label>
                     </div>
                     <div class="text-right">

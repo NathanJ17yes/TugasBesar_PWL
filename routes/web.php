@@ -13,6 +13,7 @@
 
 use App\Http\Controllers\MatkulController;
 use App\Http\Controllers\ProdiController;
+use App\Http\Controllers\RuanganController;
 
 
 Route::get('/', function() {
@@ -27,9 +28,7 @@ Auth::routes(['verify' => false, 'reset' => false]);
 Route::middleware('auth')->group(function() {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 });
-Route::get('/prodi', [ProdiController::class,'index'])->name('prodiList');
+Route::get('/ruang', [RuanganController::class,'index'])->name('ruanganList');
 Route::get('/matkul', [MatkulController::class,'index'])->name('matkulList');
 Route::get('/matkul/create',[MatkulController::class,'create'])->name('createMatkul');
 Route::post('/matkul/create',[MatkulController::class,'create'])->name('storeMatkul');
-
-
