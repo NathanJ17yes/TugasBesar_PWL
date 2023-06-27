@@ -13,7 +13,7 @@
 
 use App\Http\Controllers\MatkulController;
 use App\Http\Controllers\ProdiController;
-use App\Http\Controllers\RuanganController;
+use App\Http\Controllers\UserController;
 
 
 Route::get('/', function() {
@@ -27,15 +27,15 @@ Auth::routes(['verify' => false, 'reset' => false]);
 
 Route::middleware('auth')->group(function() {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('/prodi', [ProdiController::class,'index'])->name('prodiList');
+    Route::get('/matkul', [MatkulController::class,'index'])->name('matkulList');
+    Route::get('/matkul/create',[MatkulController::class,'create'])->name('createMatkul');
+    Route::post('/matkul/create',[MatkulController::class,'create'])->name('storeMatkul');
+    Route::get('/Mahasiswa',[UserController::class,'index'])->name('Mahasiswa')->middleware('Mahasiswa');
+    Route::get('/Prodi IF',[UserController::class,'Prodi_IF'])->name('Prodi_IF')->middleware('IF');
+    Route::get('/Prodi SI',[UserController::class,'Prodi_SI'])->name('Prodi_SI')->middleware('SI');
 });
-Route::get('/matkul', [MatkulController::class,'index'])->name('matkulList');
-Route::get('/matkul/create',[MatkulController::class,'create'])->name('createMatkul');
-Route::post('/matkul/create',[MatkulController::class,'store'])->name('storeMatkul');
-Route::get('/matkul/delete/{matkul}',[MatkulController::class,'destroy'])->name('deleteMatkul');
-Route::get('/ruang', [RuanganController::class,'index'])->name('ruanganList');
-Route::get('/ruang/create',[RuanganController::class,'create'])->name('createRuangan');
-Route::post('/ruang/create',[RuanganController::class,'store'])->name('storeRuangan');
-Route::get('/ruang/delete/{ruangan}',[RuanganController::class,'destroy'])->name('deleteRuangan');
+
 
 
 

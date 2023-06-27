@@ -25,7 +25,7 @@
         <div class="login-logo">
             {{config('app.name')}}
         </div>
-
+        
         @yield('content')
     </div>
     <!-- /.login-box -->

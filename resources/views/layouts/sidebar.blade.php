@@ -2,9 +2,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{route('dashboard')}}" class="brand-link">
-        <img src="{{asset('img/bpi.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+        <img src="{{asset('img/app-logo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">BPI University</span>
+        <span class="brand-text font-weight-light">{{config('app.name')}}</span>
     </a>
 
     <!-- Sidebar -->
@@ -29,13 +29,14 @@
                         <i class="nav-icon fa fa-dashboard"></i>
                         <p>Dashboard</p>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('ruanganList')}}" class="nav-link">
-                        <i class="nav-icon fa fa-tasks"></i>
-                        <p>Ruangan</p>
-                    </a>
-                </li>
+                @if (Auth::check() && Auth::user()->role == "IF" || Auth::check() && Auth::user()->role == "SI")
+                    <li class="nav-item">
+                        <a href="{{route('prodiList')}}" class="nav-link">
+                            <i class="nav-icon fa fa-tasks"></i>
+                            <p>Prodi</p>
+                        </a>
+                    </li>
+                @endif
                 <li class="nav-item">
                     <a href="{{route('matkulList')}}" class="nav-link">
                         <i class="nav-icon fa fa-mortar-board"></i>
