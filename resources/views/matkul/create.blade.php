@@ -28,22 +28,22 @@
                     @csrf
                     <div class="form-group">
                         <label for="txtName">Kode Mata Kuliah</label>
-                        <input type="text" id="txtName" name="txtName" required placeholder="Nama Matkul" class="form-control">
-                        <label for=""></label>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtName">Prodi</label>
-                        <input type="text" id="txtName" name="txtName" required placeholder="Prodi" class="form-control">
+                        <input type="text" id="kodeMatkul" name="kodeMatkul" required placeholder="Nama Matkul" class="form-control">
                         <label for=""></label>
                     </div>
                     <div class="form-group">
                         <label for="txtName">Mata Kuliah</label>
-                        <input type="text" id="txtName" name="txtName" required placeholder="Mata kuliah" class="form-control">
+                        <input type="text" id="mataKuliah" name="mataKuliah" required placeholder="Mata kuliah" class="form-control">
                         <label for=""></label>
                     </div>
                     <div class="form-group">
                         <label for="txtName">SKS</label>
-                        <input type="text" id="txtName" name="txtName" required placeholder="Jumlah SKS" class="form-control">
+                        <input type="text" id="sks" name="sks" required placeholder="Jumlah SKS" class="form-control">
+                        <label for=""></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtName">Semester</label>
+                        <input type="text" id="semester" name="semester" required placeholder="Semester" class="form-control">
                         <label for=""></label>
                     </div>
                     <div class="text-right">
