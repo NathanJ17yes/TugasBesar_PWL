@@ -24,9 +24,11 @@
         <div class="container-fluid">
 
             <div class="card">
+                @if (Auth::check() && Auth::user()->role == "IF" || Auth::check() && Auth::user()->role == "SI")
                 <div class="card-header text-right">
-                    <a href="{{route('createMatkul')}}" class="btn btn-primary" role="button">Add Mata Kuliah</a>
+                    <a href="{{route('createMatkul')}}" class="btn btn-primary fa fa-plus" role="button"></a>
                 </div>
+                @endif
                 <div class="card-body p-0">
                     <table class="table table-striped mb-0">
                         <thead>
