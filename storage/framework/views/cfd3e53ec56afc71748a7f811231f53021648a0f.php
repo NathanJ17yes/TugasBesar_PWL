@@ -29,13 +29,14 @@
                         <i class="nav-icon fa fa-dashboard"></i>
                         <p>Dashboard</p>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?php echo e(route('prodiList')); ?>" class="nav-link">
-                        <i class="nav-icon fa fa-tasks"></i>
-                        <p>Prodi</p>
-                    </a>
-                </li>
+                <?php if(Auth::check() && Auth::user()->role == "IF" || Auth::check() && Auth::user()->role == "SI"): ?>
+                    <li class="nav-item">
+                        <a href="<?php echo e(route('prodiList')); ?>" class="nav-link">
+                            <i class="nav-icon fa fa-tasks"></i>
+                            <p>Prodi</p>
+                        </a>
+                    </li>
+                <?php endif; ?>
                 <li class="nav-item">
                     <a href="<?php echo e(route('matkulList')); ?>" class="nav-link">
                         <i class="nav-icon fa fa-mortar-board"></i>
