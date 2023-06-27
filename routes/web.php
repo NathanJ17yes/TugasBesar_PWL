@@ -28,7 +28,14 @@ Auth::routes(['verify' => false, 'reset' => false]);
 Route::middleware('auth')->group(function() {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 });
-Route::get('/ruang', [RuanganController::class,'index'])->name('ruanganList');
 Route::get('/matkul', [MatkulController::class,'index'])->name('matkulList');
 Route::get('/matkul/create',[MatkulController::class,'create'])->name('createMatkul');
-Route::post('/matkul/create',[MatkulController::class,'create'])->name('storeMatkul');
+Route::post('/matkul/create',[MatkulController::class,'store'])->name('storeMatkul');
+Route::get('/matkul/delete/{matkul}',[MatkulController::class,'destroy'])->name('deleteMatkul');
+Route::get('/ruang', [RuanganController::class,'index'])->name('ruanganList');
+Route::get('/ruang/create',[RuanganController::class,'create'])->name('createRuangan');
+Route::post('/ruang/create',[RuanganController::class,'store'])->name('storeRuangan');
+Route::get('/ruang/delete/{ruangan}',[RuanganController::class,'destroy'])->name('deleteRuangan');
+
+
+

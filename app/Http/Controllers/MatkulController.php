@@ -83,8 +83,7 @@ class MatkulController extends Controller
      */
     public function destroy(Matkul $matkul)
     {
-        $data = Matkul::all();
-        return view('matkul.index',[
-            'matkuls' => $data
-        ]);    }
+        $matkul->delete();
+        return redirect(route('matkulList'));
+        }
 }

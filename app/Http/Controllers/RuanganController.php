@@ -27,7 +27,7 @@ class RuanganController extends Controller
      */
     public function create()
     {
-        //
+        return view('ruangan.create');
     }
 
     /**
@@ -38,7 +38,15 @@ class RuanganController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = validator($request->all(),[
+            'kodeRuangan'=>'required|string|max:100',
+            'namaRuangan'=>'required|string|max:100'
+        ])->validate();
+        $ruang = new Ruangan();
+        $ruang->kode_ruangan = $validatedData['kodeRuangan'];
+        $ruang->nama_ruangan = $validatedData['namaRuangan'];
+        $ruang->save();
+        return redirect(route('ruanganList'));
     }
 
     /**
@@ -83,6 +91,8 @@ class RuanganController extends Controller
      */
     public function destroy(Ruangan $ruangan)
     {
-        //
+        $ruangan->delete();
+        return redirect(route('ruanganList'));
     }
+
 }

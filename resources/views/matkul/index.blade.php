@@ -34,6 +34,8 @@
                         <th>Kode Mata Kuliah</th>
                         <th>Mata Kuliah</th>
                         <th>SKS</th>
+                        <th>Semester</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -42,6 +44,10 @@
                                 <td>{{$matkul->kode_matkul}}</td>
                                 <td>{{$matkul->nama_matkul}}</td>
                                 <td>{{$matkul->sks}}</td>
+                                <td>{{$matkul->semester}}</td>
+                                <td>
+                                    <a href="{{route('deleteMatkul',['kode_matkul'=>$matkul->kode_matkul])}}" class="btn btn-danger fa fa-trash-o"></a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
