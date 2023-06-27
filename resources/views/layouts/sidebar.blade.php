@@ -29,14 +29,12 @@
                         <i class="nav-icon fa fa-dashboard"></i>
                         <p>Dashboard</p>
                     </a>
-                @if (Auth::check() && Auth::user()->role == "IF" || Auth::check() && Auth::user()->role == "SI")
-                    <li class="nav-item">
-                        <a href="{{route('prodiList')}}" class="nav-link">
-                            <i class="nav-icon fa fa-tasks"></i>
-                            <p>Prodi</p>
-                        </a>
-                    </li>
-                @endif
+                <li class="nav-item">
+                    <a href="{{route('ruanganList')}}" class="nav-link">
+                        <i class="nav-icon fa fa-tasks"></i>
+                        <p>Ruangan</p>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="{{route('matkulList')}}" class="nav-link">
                         <i class="nav-icon fa fa-mortar-board"></i>
