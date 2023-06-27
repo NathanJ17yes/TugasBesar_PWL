@@ -38,7 +38,19 @@ class MatkulController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = validator($request->all(),[
+            'kodeMatkul'=>'required|string|max:100',
+            'mataKuliah'=>'required|string|max:100',
+            'sks'=>'required|string|max:100',
+            'semester'=>'required|string|max:100'
+        ])->validate();
+        $matkul = new Matkul();
+        $matkul->kode_matkul = $validatedData['kodeMatkul'];
+        $matkul->nama_matkul = $validatedData['mataKuliah'];
+        $matkul->sks = $validatedData['sks'];
+        $matkul->semester = $validatedData['semester'];
+        $matkul->save();
+        return redirect(route('matkulList'));
     }
 
     /**
