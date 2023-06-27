@@ -13,6 +13,7 @@
 
 use App\Http\Controllers\MatkulController;
 use App\Http\Controllers\ProdiController;
+use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\UserController;
 
 
@@ -34,6 +35,10 @@ Route::middleware('auth')->group(function() {
     Route::get('/Mahasiswa',[UserController::class,'index'])->name('Mahasiswa')->middleware('Mahasiswa');
     Route::get('/Prodi IF',[UserController::class,'Prodi_IF'])->name('Prodi_IF')->middleware('IF');
     Route::get('/Prodi SI',[UserController::class,'Prodi_SI'])->name('Prodi_SI')->middleware('SI');
+    Route::get('/ruang', [RuanganController::class,'index'])->name('ruanganList');
+    Route::get('/ruang/create',[RuanganController::class,'create'])->name('createRuangan');
+    Route::post('/ruang/create',[RuanganController::class,'store'])->name('storeRuangan');
+    Route::get('/ruang/delete/{ruangan}',[RuanganController::class,'destroy'])->name('deleteRuangan');
 });
 
 
